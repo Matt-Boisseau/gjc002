@@ -59,6 +59,7 @@ public class Butterfly : MonoBehaviour {
 	private void animateWings() {
 
 		float tweenTime = .1f;
+		float longTweenTime = Random.Range(.4f, 1f);
 
 		if(Input.GetKeyDown(leftKey)) {
 			animateWingFlap(leftWing, 5, -80, tweenTime);
@@ -66,6 +67,11 @@ public class Butterfly : MonoBehaviour {
 
 		if(Input.GetKeyDown(rightKey)) {
 			animateWingFlap(rightWing, -5, 80, tweenTime);
+		}
+
+		if(!LeanTween.isTweening(leftWing) && !LeanTween.isTweening(rightWing)) {
+			animateWingFlap(leftWing, 5, -80, longTweenTime);
+			animateWingFlap(rightWing, -5, 80, longTweenTime);
 		}
 	}
 
