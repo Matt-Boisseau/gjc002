@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2354413372050021695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1051182691018324944}
+  m_Layer: 0
+  m_Name: model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1051182691018324944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354413372050021695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2741756039846770816}
+  - {fileID: 2741756037877772366}
+  - {fileID: 2741756038343761723}
+  m_Father: {fileID: 2741756038238874324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2741756037877772367
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,13 +56,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2741756037877772367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2741756039395363548}
   - {fileID: 2741756039785072157}
-  m_Father: {fileID: 2741756038238874324}
+  m_Father: {fileID: 1051182691018324944}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2741756037896464047
@@ -137,9 +170,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 2741756039846770816}
-  - {fileID: 2741756037877772366}
-  - {fileID: 2741756038343761723}
+  - {fileID: 1051182691018324944}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftWing: {fileID: 2741756038343761716}
   rightWing: {fileID: 2741756037877772367}
+  model: {fileID: 2354413372050021695}
   forwardKey: 119
   backKey: 115
   leftKey: 97
@@ -170,9 +202,10 @@ MonoBehaviour:
   pitchSpeed: 10000
   maxRoll: 0
   maxPitch: 45
-  rotationDamping: 100
+  rotationDamping: 65
   airFriction: 0.5
   terminalVelocity: 1
+  rotationAnimationTime: 0.12
   gravity: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2741756038343761716
 GameObject:
@@ -199,11 +232,11 @@ Transform:
   m_GameObject: {fileID: 2741756038343761716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2741756037896464046}
   - {fileID: 2741756038445545683}
-  m_Father: {fileID: 2741756038238874324}
+  m_Father: {fileID: 1051182691018324944}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2741756038445545676
@@ -466,7 +499,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.123}
   m_LocalScale: {x: 0.1692845, y: 0.2667585, z: 0.1692845}
   m_Children: []
-  m_Father: {fileID: 2741756038238874324}
+  m_Father: {fileID: 1051182691018324944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!33 &2741756039846770821

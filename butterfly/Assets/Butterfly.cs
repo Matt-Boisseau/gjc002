@@ -6,7 +6,8 @@ public class Butterfly : MonoBehaviour {
 
 	// properties
 	public GameObject	leftWing,
-						rightWing;
+						rightWing,
+						model;
 
 	public KeyCode	forwardKey,
 					backKey,
@@ -24,7 +25,8 @@ public class Butterfly : MonoBehaviour {
 					maxPitch,
 					rotationDamping,
 					airFriction,
-					terminalVelocity;
+					terminalVelocity,
+					rotationAnimationTime;
 
 	public Vector3	gravity;
 
@@ -45,7 +47,7 @@ public class Butterfly : MonoBehaviour {
 		if(!landed) {
 			doYaw();
 			doPitch();
-			transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+			setRotation(Quaternion.Euler(pitch, yaw, roll));
 		}
 	}
 
@@ -77,6 +79,14 @@ public class Butterfly : MonoBehaviour {
 		}
 	}
 
+	private void setRotation(Quaternion newRotation) {
+		model.transform.SetParent(null);
+		transform.localRotation = newRotation;
+		model.transform.SetParent(transform);
+		LeanTween.cancel(model);
+		LeanTween.rotateLocal(model, Vector3.zero, rotationAnimationTime);
+	}
+
 	private void move() {
 
 		// move up/down when flapping
@@ -104,15 +114,12 @@ public class Butterfly : MonoBehaviour {
 
 			Quaternion yRotation = Quaternion.Euler(0, yaw, 0);
 			Quaternion normalRotation = Quaternion.LookRotation(hit.normal);
-			transform.localRotation = yRotation * Quaternion.Euler(90, 0, 0) * normalRotation;
-
-			// this isn't the right condition but I haven't figured it out yet...
-			// why does it work opposite when the butterfly is on a perfectly flat surface???
-			//if(hit.normal.x != 0 || hit.normal.z != 0) {
-			if(transform.localRotation.eulerAngles.x > 180 || transform.localRotation.eulerAngles.x < 0
-			|| transform.localRotation.eulerAngles.z > 180 || transform.localRotation.eulerAngles.z < 0) {
-				transform.localRotation *= Quaternion.Euler(0, 0, 180);
+			Quaternion newRotation = yRotation * Quaternion.Euler(90, 0, 0) * normalRotation;
+			if(newRotation.eulerAngles.x > 180 || newRotation.eulerAngles.x < 0
+			|| newRotation.eulerAngles.z > 180 || newRotation.eulerAngles.z < 0) {
+				newRotation *= Quaternion.Euler(0, 0, 180);
 			}
+			setRotation(newRotation);
 
 			transform.position = hit.point + transform.rotation * (Vector3.up * colliderSize);
 		}
