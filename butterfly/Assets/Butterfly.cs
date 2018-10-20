@@ -15,9 +15,6 @@ public class Butterfly : MonoBehaviour {
 					cwKey,
 					ccwKey;
 
-	[Range(0, 1)]
-	public float	bounciness;
-
 	public float	colliderSize,
 					upwardForce,
 					yawSpeed,
@@ -33,8 +30,11 @@ public class Butterfly : MonoBehaviour {
 
 	private float dYaw, dRoll, dPitch, yaw, roll, pitch;
 
+	private bool landed;
+
 	// fields
-	private Vector3 motion;
+	private Vector3 motion,
+					landedVector;
 
 	private void Update() {
 
@@ -42,9 +42,11 @@ public class Butterfly : MonoBehaviour {
 
 		move();
 
-		doYaw();
-		doPitch();
-		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+		if(!landed) {
+			doYaw();
+			doPitch();
+			transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+		}
 	}
 
 	private void animateWingFlap(GameObject wing, int downAngle, int upAngle, float tweenTime) {
@@ -82,7 +84,9 @@ public class Butterfly : MonoBehaviour {
 		motion += upwardMotion * Time.deltaTime;
 
 		// move down due to gravity
-		motion += gravity * Time.deltaTime;
+		if(!landed) {
+			motion += gravity * Time.deltaTime;
+		}
 
 		// damp x and z motion
 		motion.x -= motion.x * airFriction * Time.deltaTime;
@@ -91,12 +95,36 @@ public class Butterfly : MonoBehaviour {
 		// apply terminal velocity
 		motion.y = Mathf.Clamp(motion.y, -terminalVelocity, terminalVelocity);
 
-		// appply motion
-		if(!Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude)) {
-			transform.Translate(motion * Time.deltaTime, Space.World);
+		RaycastHit hit;
+		if(Physics.SphereCast(new Ray(transform.position, motion), colliderSize, out hit, (motion * Time.deltaTime).magnitude)) {
+			
+			//Debug.Log("landed");
+			landed = true;
+			motion = Vector3.zero;
+
+			Quaternion yRotation = Quaternion.Euler(0, yaw, 0);
+			Quaternion normalRotation = Quaternion.LookRotation(hit.normal);
+			transform.localRotation = yRotation * Quaternion.Euler(90, 0, 0) * normalRotation;
+
+			// this isn't the right condition but I haven't figured it out yet...
+			// why does it work opposite when the butterfly is on a perfectly flat surface???
+			//if(hit.normal.x != 0 || hit.normal.z != 0) {
+			if(transform.localRotation.eulerAngles.x > 180 || transform.localRotation.eulerAngles.x < 0
+			|| transform.localRotation.eulerAngles.z > 180 || transform.localRotation.eulerAngles.z < 0) {
+				transform.localRotation *= Quaternion.Euler(0, 0, 180);
+			}
+
+			transform.position = hit.point + transform.rotation * (Vector3.up * colliderSize);
 		}
 		else {
-			motion = -motion * bounciness;
+			
+			// appply motion
+			transform.Translate(motion * Time.deltaTime, Space.World);
+		}
+		
+		if(landed && motion.magnitude > 0 && !Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude)) {
+			//Debug.Log("     wHOOSH");
+			landed = false;
 		}
 	}
 
