@@ -15,7 +15,11 @@ public class Butterfly : MonoBehaviour {
 					cwKey,
 					ccwKey;
 
-	public float	upwardForce,
+	[Range(0, 1)]
+	public float	bounciness;
+
+	public float	colliderSize,
+					upwardForce,
 					yawSpeed,
 					rollSpeed,
 					pitchSpeed,
@@ -82,8 +86,12 @@ public class Butterfly : MonoBehaviour {
 		motion.y = Mathf.Clamp(motion.y, -terminalVelocity, terminalVelocity);
 
 		// appply motion
-		transform.Translate(motion * Time.deltaTime, Space.World);
-
+		if(!Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude)) {
+			transform.Translate(motion * Time.deltaTime, Space.World);
+		}
+		else {
+			motion = -motion * bounciness;
+		}
 	}
 
 	private void doYaw() {
