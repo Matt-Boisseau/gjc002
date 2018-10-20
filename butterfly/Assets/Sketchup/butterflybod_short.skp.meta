@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 922318abc2c4f474e8b884814c86a89d
+guid: 70c384c5253c24648b3576e079036ebd
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 8fbb1ac7ed2b37cb59ac45ec1bdcf134
+    Hash: 08c660629dab76f3f3e250f205c33a85
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -0.09191555, y: 3.4474604, z: 4.152958}
-      lookAt: {x: -0.9234819, y: -15.472831, z: -30.289865}
-      up: {x: -0.0116181895, y: 0.8765249, z: -0.48121625}
+      position: {x: 5.463227, y: 6.384028, z: 4.9192243}
+      lookAt: {x: 0.45874676, y: -2.5154793, z: -4.522101}
+      up: {x: -0.29971766, y: 0.7684056, z: -0.56543976}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -26,16 +26,9 @@ SketchUpImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: _defaultMat
-    2100002: _8
-    2100004: _6
-    2100006: _5
-    2100008: _4
-    2100010: _1
-    2100012: _2
-    2100014: _3
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh AutoSave_Flower_2
+    4300000: Mesh butterflybod_short
   externalObjects: {}
   materials:
     importMaterials: 1
