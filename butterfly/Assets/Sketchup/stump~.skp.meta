@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: ce44e49949b224ec585e1cf67b1325b0
+guid: c5b3b0ac540d248f2a0ba58af0c45bb8
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 0000000001000000
+  selectedNodes: 00000000010000000200000003000000
   assetHash:
     serializedVersion: 2
-    Hash: 7d7d71ae950ffb00d116e01402d52ad8
+    Hash: cfb4fc520abf2a11bb44d09f804e93c0
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -1.3840777, y: 3.9920397, z: -2.334003}
-      lookAt: {x: 5.3962493, y: -5.860747, z: 4.7606735}
+      position: {x: -0.23299152, y: 0.70214015, z: -0.40420362}
+      lookAt: {x: 6.547335, y: -9.150647, z: 6.690473}
       up: {x: 0.48951855, y: 0.7056974, z: 0.5122136}
       fov: 35
       aspectRatio: 0
@@ -27,21 +27,20 @@ SketchUpImporter:
     100002: //RootNode
     400000: Chris
     400002: //RootNode
-    2100000: _defaultMat
-    2100002: '[Chris_Shirt]'
-    2100004: '[Chris_Shoe]'
-    2100006: '[Chris_Skin]'
-    2100008: '[Chris_Shoe_Sole]'
-    2100010: '[Chris_Hair]'
-    2100012: '[Chris_Pants]'
-    2100014: '[Vegetation Bark Ponderosa]'
-    2100016: '[Groundcover Sand Smooth]'
-    2100018: '[Vegetation Bark Maple]'
+    2100000: '[Vegetation Bark Ponderosa]'
+    2100002: '[Groundcover Sand Smooth]'
+    2100004: '[Vegetation Bark Maple]'
+    2100006: '[Chris_Shirt]'
+    2100008: '[Chris_Shoe]'
+    2100010: '[Chris_Skin]'
+    2100012: '[Chris_Shoe_Sole]'
+    2100014: '[Chris_Hair]'
+    2100016: '[Chris_Pants]'
     2300000: Chris
     2300002: //RootNode
     3300000: Chris
     3300002: //RootNode
-    4300000: Mesh stump
+    4300000: Mesh stump~
     4300002: Mesh Chris
   externalObjects: {}
   materials:
