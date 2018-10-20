@@ -1115,9 +1115,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.48584908, b: 0.9167543, a: 1}
+  m_Color: {r: 1, g: 0.7935006, b: 0.48627448, a: 1}
   m_Intensity: 10
-  m_Range: 1
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1570,12 +1570,12 @@ PrefabInstance:
     - target: {fileID: 6834955048424889004, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14199708
+      value: 0.1419971
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048424889004, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.2318334e-10
+      value: -0.000000018355395
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048424889004, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
@@ -1585,12 +1585,12 @@ PrefabInstance:
     - target: {fileID: 6834955048065672263, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14199708
+      value: 0.1419971
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048065672263, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.2318334e-10
+      value: -0.000000018355395
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048065672263, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
@@ -1600,12 +1600,12 @@ PrefabInstance:
     - target: {fileID: 6834955048424889004, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.587407e-10
+      value: 0.0000000034741636
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048065672263, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.587407e-10
+      value: 0.0000000034741636
       objectReference: {fileID: 0}
     - target: {fileID: 6834955048424889004, guid: 64d368a6a442eb64ba08cd2b6e1cfc43,
         type: 3}

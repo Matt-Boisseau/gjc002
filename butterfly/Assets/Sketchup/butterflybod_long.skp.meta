@@ -6,16 +6,16 @@ SketchUpImporter:
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: e355916a1e530b5c24938de3e18dd7b0
+    Hash: 1267ea6d235d2f1f880a04d3d3c7f7f4
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 4.849066, y: 2.1711059, z: 9.029769}
-      lookAt: {x: 1.3007989, y: -0.8301097, z: -4.076992}
-      up: {x: -0.056396045, y: 0.97643375, z: -0.20831844}
+      position: {x: 8.960143, y: 3.6463814, z: 7.1921277}
+      lookAt: {x: 2.650784, y: -1.3779348, z: -4.136284}
+      up: {x: -0.17579821, y: 0.9324503, z: -0.3156445}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -26,6 +26,8 @@ SketchUpImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: _defaultMat
+    2100002: _3
+    2100004: _1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Mesh butterflybod_long
