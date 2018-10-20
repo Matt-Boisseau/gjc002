@@ -5,6 +5,9 @@ using UnityEngine;
 public class Butterfly : MonoBehaviour {
 
 	// properties
+	public GameObject	leftWing,
+						rightWing;
+
 	public KeyCode	forwardKey,
 					backKey,
 					leftKey,
@@ -31,11 +34,35 @@ public class Butterfly : MonoBehaviour {
 
 	private void Update() {
 
+		animateWings();
+
 		move();
 
 		doYaw();
 		doPitch();
 		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+	}
+
+	private void animateWingFlap(GameObject wing, int downAngle, int upAngle, float tweenTime) {
+		LeanTween.cancel(wing);
+		LeanTween
+			.rotateLocal(wing, Vector3.forward * downAngle, tweenTime)
+			.setOnComplete(delegate() {
+				LeanTween.rotateLocal(wing, Vector3.forward * upAngle, tweenTime);
+			});
+	}
+
+	private void animateWings() {
+
+		float tweenTime = .1f;
+
+		if(Input.GetKeyDown(leftKey)) {
+			animateWingFlap(leftWing, 5, -80, tweenTime);
+		}
+
+		if(Input.GetKeyDown(rightKey)) {
+			animateWingFlap(rightWing, -5, 80, tweenTime);
+		}
 	}
 
 	private void move() {
