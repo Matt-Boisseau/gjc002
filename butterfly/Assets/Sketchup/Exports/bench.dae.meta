@@ -12,7 +12,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: SketchUp
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Silver
+    second: {fileID: 2100004, guid: 880cbecae7fda4296b98d310acee5b5d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
