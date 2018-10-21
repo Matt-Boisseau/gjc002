@@ -6,15 +6,15 @@ SketchUpImporter:
   selectedNodes: 00000000010000000200000003000000
   assetHash:
     serializedVersion: 2
-    Hash: 7acdb8ed4c951719bc7accfac7914311
+    Hash: 350b98afd0eaaf9d607c40da51fa64f9
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -0.082958125, y: 0.8901698, z: -1.2719269}
-      lookAt: {x: -0.087168925, y: -4.2617865, z: 11.644807}
+      position: {x: -0.15438978, y: 0.43766975, z: -0.41256386}
+      lookAt: {x: -0.15860058, y: -4.714287, z: 12.50417}
       up: {x: -0.00012077381, y: 0.9288417, z: 0.37047687}
       fov: 35
       aspectRatio: 0
@@ -34,6 +34,7 @@ SketchUpImporter:
     2100008: '[Chris_Shoe_Sole]'
     2100010: '[Chris_Hair]'
     2100012: '[Chris_Pants]'
+    2100014: '[Vegetation Blur 03]'
     2300000: Chris
     2300002: //RootNode
     3300000: Chris
