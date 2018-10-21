@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 6332748d5f73849ef8a669e0ad4a7cf0
+guid: 3b52ea18d991f4f779f2cf8adaaabf27
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d000000
+  selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 9155d1cbe4654c05ac60460ae0fac075
+    Hash: 18c64b727c4290ea1b63357372128ee6
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 1.154395, y: 10.992043, z: -9.555354}
-      lookAt: {x: 0.60661304, y: -0.36884293, z: 7.77463}
-      up: {x: -0.017315026, y: 0.8364371, z: 0.5477894}
+      position: {x: -4.9103465, y: 2.415135, z: -3.1021297}
+      lookAt: {x: 32.473328, y: -7.8717, z: 21.05332}
+      up: {x: 0.18913583, y: 0.97431636, z: 0.12221006}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -23,73 +23,12 @@ SketchUpImporter:
     scenes: []
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Component#1
-    100002: Component#1 1
-    100004: Component#1 10
-    100006: Component#1 11
-    100008: Component#1 12
-    100010: Component#1 13
-    100012: Component#1 2
-    100014: Component#1 3
-    100016: Component#1 4
-    100018: Component#1 5
-    100020: Component#1 6
-    100022: Component#1 7
-    100024: Component#1 8
-    100026: Component#1 9
-    100028: //RootNode
-    100030: Component#2
-    400000: Component#1
-    400002: Component#1 1
-    400004: Component#1 10
-    400006: Component#1 11
-    400008: Component#1 12
-    400010: Component#1 13
-    400012: Component#1 2
-    400014: Component#1 3
-    400016: Component#1 4
-    400018: Component#1 5
-    400020: Component#1 6
-    400022: Component#1 7
-    400024: Component#1 8
-    400026: Component#1 9
-    400028: //RootNode
-    400030: Component#2
-    2100000: '[Vegetation Ivy Hedera]5'
-    2100002: '[Fencing Chain Link]1'
-    2100004: '[Vegetation Ivy Hedera]6'
-    2100006: '[Vegetation Ivy Hedera]4'
-    2100008: '[Fencing Chain Link]'
-    2100010: '[Vegetation Ivy Hedera]2'
-    2300000: Component#1
-    2300002: Component#1 1
-    2300004: Component#1 10
-    2300006: Component#1 11
-    2300008: Component#1 12
-    2300010: Component#1 13
-    2300012: Component#1 2
-    2300014: Component#1 3
-    2300016: Component#1 4
-    2300018: Component#1 5
-    2300020: Component#1 6
-    2300022: Component#1 7
-    2300024: Component#1 8
-    2300026: Component#1 9
-    3300000: Component#1
-    3300002: Component#1 1
-    3300004: Component#1 10
-    3300006: Component#1 11
-    3300008: Component#1 12
-    3300010: Component#1 13
-    3300012: Component#1 2
-    3300014: Component#1 3
-    3300016: Component#1 4
-    3300018: Component#1 5
-    3300020: Component#1 6
-    3300022: Component#1 7
-    3300024: Component#1 8
-    3300026: Component#1 9
-    4300000: Mesh Component#1
+    100000: //RootNode
+    400000: //RootNode
+    2100000: _defaultMat
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mesh flower_3
   externalObjects: {}
   materials:
     importMaterials: 1
