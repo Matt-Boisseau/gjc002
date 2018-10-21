@@ -39,6 +39,8 @@ public class Butterfly : MonoBehaviour {
 	public Vector3	gravity,
 					happinessLevelIndicatorOffset;
 
+	public LayerMask collisionLayerMask;
+
 	// fields
 	private float	dYaw,
 					dRoll,
@@ -76,7 +78,7 @@ public class Butterfly : MonoBehaviour {
 		}
 	}
 
-	private void adjustHappiness(float rate) {
+	public void adjustHappiness(float rate) {
 
 		// increment
 		happiness += rate * Time.deltaTime;
@@ -87,7 +89,7 @@ public class Butterfly : MonoBehaviour {
 		}
 
 		// keep it below max
-		happiness = Mathf.Clamp(happiness, 0, happinessThresholdsPerLevel * happinessLevels.Length);
+		happiness = Mathf.Clamp(happiness, 0, (happinessThresholdsPerLevel * happinessLevels.Length) - .1f);
 
 		// pop up when a threshold is crossed
 		if(Mathf.Floor(happiness) != happinessThreshold) {
@@ -166,7 +168,7 @@ public class Butterfly : MonoBehaviour {
 		motion.y = Mathf.Clamp(motion.y, -terminalVelocity, terminalVelocity);
 
 		RaycastHit hit;
-		if(Physics.SphereCast(new Ray(transform.position, motion), colliderSize, out hit, (motion * Time.deltaTime).magnitude)) {
+		if(Physics.SphereCast(new Ray(transform.position, motion), colliderSize, out hit, (motion * Time.deltaTime).magnitude, collisionLayerMask)) {
 			
 			// stop moving and set landed
 			StartCoroutine(landingControlLockout());
@@ -203,7 +205,7 @@ public class Butterfly : MonoBehaviour {
 			transform.Translate(motion * Time.deltaTime, Space.World);
 		}
 		
-		if(landed && motion.magnitude > 0 && !Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude)) {
+		if(landed && motion.magnitude > 0 && !Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude, collisionLayerMask)) {
 			landed = false;
 		}
 	}
