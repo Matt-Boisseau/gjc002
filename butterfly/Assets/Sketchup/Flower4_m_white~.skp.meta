@@ -6,16 +6,16 @@ SketchUpImporter:
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 17e76571e35890c5ec44846b1bc9330e
+    Hash: 910d081f9180d003f16eb51d08596013
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -13.487988, y: 27.727942, z: 7.6475487}
-      lookAt: {x: 11.185987, y: -4.6175528, z: 19.108023}
-      up: {x: 0.694076, y: 0.64368355, z: 0.32238176}
+      position: {x: 22.504566, y: 31.781446, z: 41.605576}
+      lookAt: {x: -1.2680508, y: 11.235173, z: 13.337361}
+      up: {x: -0.3128813, y: 0.87389034, z: -0.37204975}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -31,6 +31,7 @@ SketchUpImporter:
     2100006: _16
     2100008: _19
     2100010: _18
+    2100012: _20
     2300000: //RootNode
     3300000: //RootNode
     4300000: Mesh Flower4_m_white~

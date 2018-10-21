@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 65a12b2bbfc3340278d538553b21f1b5
+guid: 4849d9a00102041248fe3c3e753c3b72
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 61b0164df229a44704c313e41d2b1c87
+    Hash: d1a7413cafefdae0ea5a9d7093bff932
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 0.43491942, y: 0.49263796, z: 0.97614014}
-      lookAt: {x: -7.3636417, y: -3.3410058, z: -9.880669}
-      up: {x: -0.16083023, y: 0.9612503, z: -0.22390068}
+      position: {x: 2.1150055, y: 0.8391847, z: -1.4761076}
+      lookAt: {x: -5.4269924, y: -2.574351, z: 9.697554}
+      up: {x: -0.13732943, y: 0.9694049, z: 0.20345703}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -25,10 +25,10 @@ SketchUpImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: '[Vegetation Blur 03]'
+    2100000: '[Brick Basket]'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh AutoSave_Shrub_2_no_Chris
+    4300000: Mesh square planter
   externalObjects: {}
   materials:
     importMaterials: 1

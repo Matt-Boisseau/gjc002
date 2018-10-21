@@ -6,16 +6,16 @@ SketchUpImporter:
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 51046cc28f32cebf5a3529d42300065e
+    Hash: a2ae5ed81e5b8883c9a89166358a6af3
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 29.367529, y: 0.30073038, z: 0.19572917}
-      lookAt: {x: 14.196287, y: 0.155829, z: 0.20016961}
-      up: {x: -0.009550621, y: 0.9999544, z: 0.0000027953577}
+      position: {x: 53.710835, y: 25.251053, z: -38.045208}
+      lookAt: {x: 29.794893, y: 14.526977, z: -23.455843}
+      up: {x: -0.30519828, y: 0.93391186, z: 0.18617916}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -33,6 +33,8 @@ SketchUpImporter:
     2100010: _7
     2100012: _8
     2100014: _10
+    2100016: _defaultMat
+    2100018: _13
     2300000: //RootNode
     3300000: //RootNode
     4300000: Mesh Flower4_m_stalke~

@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 2218faddc4df8428f812911092cac7b5
+guid: 60199ab98dd8a4f0dad25af90acf9e2a
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 000000000100000002000000
+  selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: fff84d752a5cd37f328d593e5f2c0835
+    Hash: 79c1cb236690a6d2cbd20f6e9421eb1a
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -22.054737, y: 29.07567, z: 5.55481}
-      lookAt: {x: 7.06534, y: -0.3109783, z: 14.204936}
-      up: {x: 0.6665016, y: 0.7187335, z: 0.19798447}
+      position: {x: -3.659482, y: 2.7835958, z: 0.78859127}
+      lookAt: {x: 9.246359, y: -2.3648214, z: 1.35229}
+      up: {x: 0.36986977, y: 0.92894316, z: 0.0161551}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -24,22 +24,11 @@ SketchUpImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Group 1
     400000: //RootNode
-    400002: Group 1
-    2100000: _2
-    2100002: _14
-    2100004: _15
-    2100006: _20
-    2100008: _16
-    2100010: _19
-    2100012: _18
+    2100000: _7
     2300000: //RootNode
-    2300002: Group 1
     3300000: //RootNode
-    3300002: Group 1
-    4300000: Mesh AutoSave_Flower4_m_white
-    4300002: Mesh Group 1
+    4300000: Mesh Arch
   externalObjects: {}
   materials:
     importMaterials: 1
