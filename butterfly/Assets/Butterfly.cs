@@ -13,8 +13,7 @@ public class Butterfly : MonoBehaviour {
 					backKey,
 					leftKey,
 					rightKey,
-					cwKey,
-					ccwKey;
+					cheatFlyKey;
 
 	public float	colliderSize,
 					upwardForce,
@@ -26,13 +25,15 @@ public class Butterfly : MonoBehaviour {
 					rotationDamping,
 					airFriction,
 					terminalVelocity,
-					rotationAnimationTime;
+					rotationAnimationTime,
+					landingControlLockoutTime;
 
 	public Vector3	gravity;
 
 	private float dYaw, dRoll, dPitch, yaw, roll, pitch;
 
-	private bool landed;
+	private bool	landed,
+					controlLockout;
 
 	// fields
 	private Vector3 motion,
@@ -90,8 +91,10 @@ public class Butterfly : MonoBehaviour {
 	private void move() {
 
 		// move up/down when flapping
-		Vector3 upwardMotion = transform.rotation * Vector3.up * upwardForce * (keyDownValue(leftKey) + keyDownValue(rightKey));
-		motion += upwardMotion * Time.deltaTime;
+		if(!controlLockout) {
+			Vector3 upwardMotion = transform.rotation * Vector3.up * upwardForce * (keyDownValue(leftKey) + keyDownValue(rightKey) + keyValue(cheatFlyKey) * 3);
+			motion += upwardMotion * Time.deltaTime;
+		}
 
 		// move down due to gravity
 		if(!landed) {
@@ -108,19 +111,33 @@ public class Butterfly : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.SphereCast(new Ray(transform.position, motion), colliderSize, out hit, (motion * Time.deltaTime).magnitude)) {
 			
-			//Debug.Log("landed");
+			// stop moving and set landed
+			StartCoroutine(landingControlLockout());
 			landed = true;
 			motion = Vector3.zero;
 
-			Quaternion yRotation = Quaternion.Euler(0, yaw, 0);
-			Quaternion normalRotation = Quaternion.LookRotation(hit.normal);
-			Quaternion newRotation = yRotation * Quaternion.Euler(90, 0, 0) * normalRotation;
-			if(newRotation.eulerAngles.x > 180 || newRotation.eulerAngles.x < 0
-			|| newRotation.eulerAngles.z > 180 || newRotation.eulerAngles.z < 0) {
-				newRotation *= Quaternion.Euler(0, 0, 180);
+			// save previous rotation for use in animation
+			Quaternion previousRotation = transform.localRotation;
+
+			// calculate new rotation
+			transform.localRotation = Quaternion.LookRotation(hit.normal);
+			transform.localRotation *= Quaternion.Euler(90, 0, 0);
+			transform.localRotation *= Quaternion.Euler(0, -transform.localEulerAngles.y, 0);
+			transform.localRotation *= Quaternion.Euler(0, yaw, 0);
+
+			// upside down
+			float x = transform.localRotation.eulerAngles.x % 360;
+			float z = transform.localRotation.eulerAngles.z % 360;
+			if((90 < x && x < 270) || (90 < z && z < 270)) {
+				transform.localRotation *= Quaternion.Euler(0, 180, 0);
 			}
+
+			// undo rotation and animate it instead
+			Quaternion newRotation = transform.localRotation;
+			transform.localRotation = previousRotation;
 			setRotation(newRotation);
 
+			// assign correct position
 			transform.position = hit.point + transform.rotation * (Vector3.up * colliderSize);
 		}
 		else {
@@ -130,9 +147,14 @@ public class Butterfly : MonoBehaviour {
 		}
 		
 		if(landed && motion.magnitude > 0 && !Physics.SphereCast(new Ray(transform.position, motion), colliderSize, (motion * Time.deltaTime).magnitude)) {
-			//Debug.Log("     wHOOSH");
 			landed = false;
 		}
+	}
+
+	private IEnumerator landingControlLockout() {
+		controlLockout = true;
+		yield return new WaitForSeconds(landingControlLockoutTime);
+		controlLockout = false;
 	}
 
 	private void doYaw() {

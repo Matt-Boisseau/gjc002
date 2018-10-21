@@ -206,6 +206,7 @@ MonoBehaviour:
   airFriction: 0.5
   terminalVelocity: 1
   rotationAnimationTime: 0.12
+  landingControlLockoutTime: 0.5
   gravity: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2741756038343761716
 GameObject:
