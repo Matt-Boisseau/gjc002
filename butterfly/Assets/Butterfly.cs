@@ -26,25 +26,44 @@ public class Butterfly : MonoBehaviour {
 					airFriction,
 					terminalVelocity,
 					rotationAnimationTime,
-					landingControlLockoutTime;
+					landingControlLockoutTime,
+					startingHappiness,
+					happinessDecayRate;
 
-	public Vector3	gravity;
+	public int happinessThresholdsPerLevel;
+
+	public Sprite[] happinessLevels;
+
+	public SpriteRenderer happinessLevelIndicator;
+
+	public Vector3	gravity,
+					happinessLevelIndicatorOffset;
 
 	// fields
-
 	private float	dYaw,
 					dRoll,
 					dPitch,
 					yaw,
 					roll,
-					pitch;
+					pitch,
+					happiness;
+
+	private int happinessThreshold;
 
 	private bool	landed,
 					controlLockout;
 	private Vector3 motion,
 					landedVector;
 
+	private void Start() {
+		happiness = startingHappiness;
+		happinessThreshold = Mathf.FloorToInt(startingHappiness);
+	}
+
 	private void Update() {
+
+		adjustHappiness(-happinessDecayRate);
+		happinessLevelIndicatorFollow();
 
 		animateWings();
 
@@ -55,6 +74,39 @@ public class Butterfly : MonoBehaviour {
 			doPitch();
 			setRotation(Quaternion.Euler(pitch, yaw, roll));
 		}
+	}
+
+	private void adjustHappiness(float rate) {
+
+		// increment
+		happiness += rate * Time.deltaTime;
+
+		// keep it above 0
+		if(happiness < 0) {
+			happiness++;
+		}
+
+		// keep it below max
+		happiness = Mathf.Clamp(happiness, 0, happinessThresholdsPerLevel * happinessLevels.Length);
+
+		// pop up when a threshold is crossed
+		if(Mathf.Floor(happiness) != happinessThreshold) {
+			happinessThreshold = Mathf.FloorToInt(happiness);
+			int currentLevel = Mathf.FloorToInt(happinessThreshold / happinessThresholdsPerLevel);
+			StartCoroutine(happinessPopup(currentLevel));
+		}
+	}
+
+	private void happinessLevelIndicatorFollow() {
+		happinessLevelIndicator.transform.position = transform.position + happinessLevelIndicatorOffset;
+		happinessLevelIndicator.transform.LookAt(Camera.main.transform);
+		happinessLevelIndicator.transform.rotation *= Quaternion.Euler(0, 180, 0);
+	}
+
+	private IEnumerator happinessPopup(int level) {
+		happinessLevelIndicator.sprite = happinessLevels[level];
+		yield return new WaitForSeconds(1);
+		happinessLevelIndicator.sprite = null;
 	}
 
 	private void animateWingFlap(GameObject wing, int downAngle, int upAngle, float tweenTime) {

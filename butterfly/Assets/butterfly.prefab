@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051182691018324944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2741756037877772366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: right wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2741756037896464046}
   - component: {fileID: 2741756037896464051}
   - component: {fileID: 2741756037896464044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2741756038238874324}
   - component: {fileID: 2741756038238874331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: butterfly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,8 +193,7 @@ MonoBehaviour:
   backKey: 115
   leftKey: 97
   rightKey: 100
-  cwKey: 101
-  ccwKey: 113
+  cheatFlyKey: 32
   colliderSize: 0.025
   upwardForce: 5
   yawSpeed: 20
@@ -207,7 +206,18 @@ MonoBehaviour:
   terminalVelocity: 1
   rotationAnimationTime: 0.12
   landingControlLockoutTime: 0.5
+  startingHappiness: 13
+  happinessDecayRate: 0.05
+  happinessThresholdsPerLevel: 3
+  happinessLevels:
+  - {fileID: 21300000, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  - {fileID: 21300002, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  - {fileID: 21300004, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  - {fileID: 21300006, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  - {fileID: 21300008, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  happinessLevelIndicator: {fileID: 0}
   gravity: {x: 0, y: -0.5, z: 0}
+  happinessLevelIndicatorOffset: {x: -0.02, y: 0.05, z: 0}
 --- !u!1 &2741756038343761716
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2741756038343761723}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: left wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +261,7 @@ GameObject:
   - component: {fileID: 2741756038445545683}
   - component: {fileID: 2741756038445545680}
   - component: {fileID: 2741756038445545681}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +338,7 @@ GameObject:
   - component: {fileID: 2741756039395363548}
   - component: {fileID: 2741756039395363553}
   - component: {fileID: 2741756039395363554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +415,7 @@ GameObject:
   - component: {fileID: 2741756039785072157}
   - component: {fileID: 2741756039785072162}
   - component: {fileID: 2741756039785072163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +492,7 @@ GameObject:
   - component: {fileID: 2741756039846770816}
   - component: {fileID: 2741756039846770821}
   - component: {fileID: 2741756039846770822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

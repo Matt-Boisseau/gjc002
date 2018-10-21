@@ -5753,7 +5753,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e7cb54c13e5a6044871eb3a6cbaf084, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5761,7 +5761,7 @@ SpriteRenderer:
   m_Size: {x: 0.56, y: 0.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2082361183
@@ -5993,53 +5993,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741756038238874331, guid: 0c03b7dc07081ee46b9a642a30403b1a,
         type: 3}
-      propertyPath: cheatFlyKey
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756038238874325, guid: 0c03b7dc07081ee46b9a642a30403b1a,
+      propertyPath: happinessLevelIndicator
+      value: 
+      objectReference: {fileID: 2035809518}
+    - target: {fileID: 2741756038238874331, guid: 0c03b7dc07081ee46b9a642a30403b1a,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: happinessLevelIndicatorOffset.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2354413372050021695, guid: 0c03b7dc07081ee46b9a642a30403b1a,
+    - target: {fileID: 2741756038238874331, guid: 0c03b7dc07081ee46b9a642a30403b1a,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756039846770817, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756037877772367, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756039395363549, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756039785072158, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756038343761716, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756037896464047, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741756038445545676, guid: 0c03b7dc07081ee46b9a642a30403b1a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: happinessLevelIndicatorOffset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c03b7dc07081ee46b9a642a30403b1a, type: 3}
