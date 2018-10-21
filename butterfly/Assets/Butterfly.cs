@@ -30,12 +30,17 @@ public class Butterfly : MonoBehaviour {
 
 	public Vector3	gravity;
 
-	private float dYaw, dRoll, dPitch, yaw, roll, pitch;
+	// fields
+
+	private float	dYaw,
+					dRoll,
+					dPitch,
+					yaw,
+					roll,
+					pitch;
 
 	private bool	landed,
 					controlLockout;
-
-	// fields
 	private Vector3 motion,
 					landedVector;
 
@@ -56,7 +61,7 @@ public class Butterfly : MonoBehaviour {
 		LeanTween.cancel(wing);
 		LeanTween
 			.rotateLocal(wing, Vector3.forward * downAngle, tweenTime)
-			.setOnComplete(delegate() {
+			.setOnComplete(() => {
 				LeanTween.rotateLocal(wing, Vector3.forward * upAngle, tweenTime);
 			});
 	}
