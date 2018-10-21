@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 7652e79ed5f3246a782450a9f54e90e2
+guid: c0b3da6207b894bd8bbe9b7494496fa0
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: bd39bac551a57cbf0aec033be229f112
+    Hash: 97bb123568cb90aaf809339893bf28ae
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: -15.728154, y: 0.34156942, z: 8.694605}
-      lookAt: {x: 155.64587, y: -40.74498, z: -73.61398}
-      up: {x: 0.19041412, y: 0.9774348, z: -0.09145327}
+      position: {x: -2.617751, y: 7.025733, z: -25.801308}
+      lookAt: {x: 5.081796, y: -1.1402484, z: 59.125557}
+      up: {x: 0.008606888, y: 0.99544626, z: 0.09493494}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -27,19 +27,14 @@ SketchUpImporter:
     400000: //RootNode
     2100000: _defaultMat
     2100002: _1
-    2100004: _6
-    2100006: _4
+    2100004: _4
+    2100006: _7
     2100008: _2
     2100010: _3
-    2100012: _7
-    2100014: _10
-    2100016: _9
-    2100018: _8
-    2100020: _11
-    2100022: _12
+    2100012: _8
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh flower_3_yellow
+    4300000: Mesh AutoSave_flower_3_red
   externalObjects: {}
   materials:
     importMaterials: 1
